@@ -9,37 +9,45 @@
 import Foundation
 
 struct NetworkService {
-    let baseUrl = "https://rickandmortyapi.com/api/episode?page=" //page=
     
-    func fetchEpisodes(page: Int,  onComplete: @escaping (Result<[Episode]?, NetworkError>) -> Void){
-        let pageStr = String(page)
-        guard let url = URL(string: "https://rickandmortyapi.com/api/episode") else { // baseUrl + pageStr) else {
+    func fetchEpisodes(nextPageURL: String,  onComplete: @escaping (Result<ApiResponse?, NetworkError>) -> Void){
+        
+        guard let url = URL(string: nextPageURL) else {
             onComplete(.failure(.URL))
             return
         }
-        
+
         URLSession.shared.dataTask(with: url){ data, response, error  in
-            print(data,response,error)
-            guard let response = response, let data = data else{
+            guard let data = data, error == nil else{
                 print("Error in network call",error ?? "")
                 onComplete(.failure(.server))
                 return
             }
-            print("response",response)
             
-            let episodes = self.decodeJson(data: data)
-            onComplete(.success(episodes))
+            guard let apiResponse = self.decodeJson(data: data) else{
+                onComplete(.failure(.jsonDecoding ))
+                return
+            }
+            
+            guard apiResponse.error == nil else{
+                print("Error from server",apiResponse.error ?? "")
+                onComplete(.failure(.server ))
+                return
+                
+            }
+            onComplete(.success(apiResponse))
+            return
+            
         }.resume()
     }
     
-    func decodeJson(data: Data) -> [Episode]? {
+    func decodeJson(data: Data) -> ApiResponse? {
         do {
+            
             let jsonDecoder = JSONDecoder()
             let apiResponse = try jsonDecoder.decode(ApiResponse.self, from: data)
-            let episodes = apiResponse.results
-            print(episodes)
+            return apiResponse
             
-            return episodes
         } catch let error {
             print ("Error decoding json", error)
             return nil

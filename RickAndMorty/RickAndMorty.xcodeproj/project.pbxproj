@@ -18,6 +18,12 @@
 		13EBFD8B250815C7004214B9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBFD8A250815C7004214B9 /* NetworkService.swift */; };
 		13EBFD8E25081951004214B9 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBFD8D25081951004214B9 /* ApiResponse.swift */; };
 		13EBFD9025081C3A004214B9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBFD8F25081C3A004214B9 /* Repository.swift */; };
+		13EBFD9225086692004214B9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBFD8A250815C7004214B9 /* NetworkService.swift */; };
+		13EBFD942508683E004214B9 /* AllJSONResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 13EBFD932508683E004214B9 /* AllJSONResponse.json */; };
+		13EBFD96250868A1004214B9 /* ErrorJSONResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 13EBFD95250868A1004214B9 /* ErrorJSONResponse.json */; };
+		13EBFD97250869FE004214B9 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBFD8D25081951004214B9 /* ApiResponse.swift */; };
+		13EBFD9825086C46004214B9 /* AllJSONResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 13EBFD932508683E004214B9 /* AllJSONResponse.json */; };
+		13EBFD9925086C49004214B9 /* ErrorJSONResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 13EBFD95250868A1004214B9 /* ErrorJSONResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,8 @@
 		13EBFD8A250815C7004214B9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		13EBFD8D25081951004214B9 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		13EBFD8F25081C3A004214B9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		13EBFD932508683E004214B9 /* AllJSONResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllJSONResponse.json; sourceTree = "<group>"; };
+		13EBFD95250868A1004214B9 /* ErrorJSONResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ErrorJSONResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,8 @@
 			children = (
 				13EBFD7D2508147F004214B9 /* RickAndMortyTests.swift */,
 				13EBFD7F2508147F004214B9 /* Info.plist */,
+				13EBFD932508683E004214B9 /* AllJSONResponse.json */,
+				13EBFD95250868A1004214B9 /* ErrorJSONResponse.json */,
 			);
 			path = RickAndMortyTests;
 			sourceTree = "<group>";
@@ -226,7 +236,9 @@
 			files = (
 				13EBFD732508147F004214B9 /* LaunchScreen.storyboard in Resources */,
 				13EBFD702508147F004214B9 /* Preview Assets.xcassets in Resources */,
+				13EBFD9825086C46004214B9 /* AllJSONResponse.json in Resources */,
 				13EBFD6D2508147F004214B9 /* Assets.xcassets in Resources */,
+				13EBFD9925086C49004214B9 /* ErrorJSONResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +246,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EBFD96250868A1004214B9 /* ErrorJSONResponse.json in Resources */,
+				13EBFD942508683E004214B9 /* AllJSONResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EBFD97250869FE004214B9 /* ApiResponse.swift in Sources */,
+				13EBFD9225086692004214B9 /* NetworkService.swift in Sources */,
 				13EBFD7E2508147F004214B9 /* RickAndMortyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

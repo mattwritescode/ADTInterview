@@ -17,16 +17,17 @@ import Foundation
 
 // MARK: - ApiResponse
 struct ApiResponse: Codable {
-    let info: Info
-    let results: [Episode]
+    let info: Info?
+    let results: [Episode]?
+    let error: String?
 }
 
 // MARK: - Info
 struct Info: Codable {
-    let count, pages: Int
-    let next: String
-    let prev: JSONNull?
-}
+    let count: Int
+    let pages: Int?
+    let next, prev: String?
+ }
 
 // MARK: - Episode
 struct Episode: Codable, Identifiable {
